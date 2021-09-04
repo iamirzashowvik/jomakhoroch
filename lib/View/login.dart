@@ -1,9 +1,14 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jomakhoroch/View/home_page.dart';
 import 'package:jomakhoroch/View/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
+
+import 'model/loginapi.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -19,30 +24,55 @@ class _LoginState extends State<Login> {
   void loginTap() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     if (phoneController.text != '' && pinController.text != '') {
-      await FirebaseFirestore.instance
-          .collection('Users')
-          .doc('+88' + phoneController.text)
-          .get()
-          .then((value) {
-        if (value.exists) {
-          if (value['Pin'] == pinController.text) {
-            sharedPreferences.setString('Phone', '+88' + phoneController.text);
-            Get.offAll(HomePage());
-          } else {
-            showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                      content: Text('ভুল পাসওয়ার্ড'),
-                    ));
-          }
-        } else {
-          showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                    content: Text('কোনো নম্বর পাওয়া যায় নাই'),
-                  ));
-        }
+      var url = Uri.parse('https://dokanhub.xyz/api/login');
+      var response = await http.post(url, body: {
+        'email': phoneController.text,
+        'password': pinController.text
+        // 'email': 'sk1@gmail.com',
+        // 'password': '333221'
       });
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+
+      final login = loginFromJson(response.body);
+
+      print(login.success);
+      if (login.success) {
+        print(login.data.apiToken);
+        print(login.data.email);
+        print(login.data.customFields.phone.value);
+        sharedPreferences.setString(
+            'user_phn', login.data.customFields.phone.value);
+        sharedPreferences.setString('user_token', login.data.apiToken);
+        sharedPreferences.setString('user_email', login.data.email);
+
+        Get.offAll(HomePage());
+      } else {}
+      // await FirebaseFirestore.instance
+      //     .collection('Users')
+      //     .doc('+88' + phoneController.text)
+      //     .get()
+      //     .then((value) {
+      //   if (value.exists) {
+      //     if (value['Pin'] == pinController.text) {
+      //       sharedPreferences.setString('Phone', '+88' + phoneController.text);
+      //       Get.offAll(HomePage());
+      //     } else {
+      //       showDialog(
+      //           context: context,
+      //           builder: (context) => AlertDialog(
+      //                 content: Text('ভুল পাসওয়ার্ড'),
+      //               ));
+      //     }
+      //   } else {
+      //     showDialog(
+      //         context: context,
+      //         builder: (context) => AlertDialog(
+      //               content: Text('কোনো নম্বর পাওয়া যায় নাই'),
+      //             ));
+      //   }
+      // });
+
     } else {
       showDialog(
           context: context,
@@ -97,8 +127,8 @@ class _LoginState extends State<Login> {
                       SizedBox(height: 40.0),
                       TextField(
                         controller: phoneController,
-                        maxLength: 11,
-                        keyboardType: TextInputType.number,
+                        //  maxLength: 11,
+                        keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           labelText: 'মোবাইল নম্বর*',
                           labelStyle: TextStyle(color: Colors.teal),
@@ -186,3 +216,5 @@ class _LoginState extends State<Login> {
     );
   }
 }
+// 01611306400
+// 333221
