@@ -559,7 +559,7 @@ class _RegistrationState extends State<Registration> {
           "delivery_fee": "50",
           "delivery_range": "20",
           "phone": "01710427095",
-          "mobile": "01644819157",
+          "mobile": "01710427095",
           "address": "demo Address",
           "latitude": "35.43",
           "longitude": "35.346",
