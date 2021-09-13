@@ -217,6 +217,13 @@ class _RegistrationState extends State<Registration> {
                   height: 15,
                 ),
                 TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'আপনার দোকানের নাম দিন';
+                    }
+
+                    return null;
+                  },
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'আপনার দোকানের নাম',
@@ -240,6 +247,13 @@ class _RegistrationState extends State<Registration> {
                   height: 20.0,
                 ),
                 TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'আপনার নাম দিন';
+                    }
+
+                    return null;
+                  },
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'আপনার নাম',
@@ -263,6 +277,13 @@ class _RegistrationState extends State<Registration> {
                   height: 20.0,
                 ),
                 TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'আপনার মোবাইল নাম্বার দিন';
+                    }
+
+                    return null;
+                  },
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'আপনার মোবাইল নাম্বার',
@@ -286,6 +307,13 @@ class _RegistrationState extends State<Registration> {
                   height: 20.0,
                 ),
                 TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'পাঁচ সংখ্যার পিন নাম্বার দিন';
+                    }
+
+                    return null;
+                  },
                   maxLength: 5,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -310,6 +338,13 @@ class _RegistrationState extends State<Registration> {
                   height: 20.0,
                 ),
                 TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'পিন নাম্বার নির্শ্চিত করুন';
+                    }
+
+                    return null;
+                  },
                   maxLength: 5,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -401,5 +436,9 @@ class _RegistrationState extends State<Registration> {
     );
   }
 
-  registrationX() {}
+  registrationX() {
+    try {} catch (e) {
+      print(e);
+    }
+  }
 }
