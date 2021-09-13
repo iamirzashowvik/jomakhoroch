@@ -227,23 +227,21 @@ class _RegistrationState extends State<Registration> {
 
   Widget getImageWidget() {
     // ignore: unnecessary_null_comparison
-    // if (_selectedFile != null) {
-    //   return Image.
-    //   file(
-    //     _selectedFile,
-    //     width: 250,
-    //     height: 250,
-    //     fit: BoxFit.cover,
-    //   )
-    //   ;
-    // } else {
-    return Image.asset(
-      "images/d.png",
-      width: 150,
-      height: 150,
-      fit: BoxFit.cover,
-    );
-    // }
+    if (_selectedFile != null) {
+      return Image.file(
+        File(_selectedFile.path),
+        width: 250,
+        height: 250,
+        fit: BoxFit.cover,
+      );
+    } else {
+      return Image.asset(
+        "images/d.png",
+        width: 150,
+        height: 150,
+        fit: BoxFit.cover,
+      );
+    }
   }
 
 //https://camo.githubusercontent.com/1ac901163b1b3843204a77f5ab49f839fc97b56d59036e0582e3e492f174dfcb/68747470733a2f2f677076632e6172747572696f2e6465762f546168616e696d61
