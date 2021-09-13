@@ -234,7 +234,7 @@ class _RegistrationState extends State<Registration> {
       );
     } else {
       return Image.asset(
-        "Assets/photo6154508545861724877.jpg",
+        "images/d.png",
         width: 250,
         height: 250,
         fit: BoxFit.cover,
