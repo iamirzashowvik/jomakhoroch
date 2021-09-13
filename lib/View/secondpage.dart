@@ -3,23 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:jomakhoroch/View/register.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class Second extends StatelessWidget {
+class SecondX extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Smooth Page Indicator Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePage(),
+      home: HomePagess(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
+class HomePagess extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePagessState createState() => _HomePagessState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePagessState extends State<HomePagess> {
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
   @override
