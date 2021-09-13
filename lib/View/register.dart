@@ -503,9 +503,10 @@ class _RegistrationState extends State<Registration> {
                   child: GestureDetector(
                     onTap: () {
                       // registrationX();
-                      if (regForm.currentState!.validate()) {
-                        registrationX();
-                      } else {}
+                      // if (regForm.currentState!.validate()) {
+                      //   registrationX();
+                      // } else {}
+                      registrationX();
                     },
                     child: Container(
                       width: 200,
