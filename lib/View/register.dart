@@ -197,7 +197,8 @@ class _RegistrationState extends State<Registration> {
       _inProcess = true;
     });
     final picker = ImagePicker();
-    PickedFile? image = await picker.getImage(source: source);
+    XFile? image = await picker.pickImage(source: source);
+    //getImage(source: source);
     if (image != null) {
       File? cropped = await ImageCropper.cropImage(
           sourcePath: image.path,
