@@ -194,7 +194,7 @@ class _LoginState extends State<Login> {
                     SizedBox(height: 8.0),
                     GestureDetector(
                       onTap: () {
-                        Get.to(Register());
+                        Get.to(Registration());
                       },
                       child: Row(
                         children: [
