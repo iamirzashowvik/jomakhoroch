@@ -359,30 +359,28 @@ class _RegistrationState extends State<Registration> {
                 SizedBox(
                   height: 10.0,
                 ),
-                Center(
-                  child: Container(
-                    width: 200,
-                    height: 50.0,
-                    decoration: BoxDecoration(
-                      color: Colors.purple[300],
-                      borderRadius:
-                          BorderRadius.circular(10), //border corner radius
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.2), //color of shadow
-                          spreadRadius: 5, //spread radius
-                          blurRadius: 7, // blur radius
-                          offset: Offset(0, 2), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Center(
-                        child: Text("সেইভ করুন",
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500))),
+                Container(
+                  width: 200,
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    color: Colors.purple[300],
+                    borderRadius:
+                        BorderRadius.circular(10), //border corner radius
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.2), //color of shadow
+                        spreadRadius: 5, //spread radius
+                        blurRadius: 7, // blur radius
+                        offset: Offset(0, 2), // changes position of shadow
+                      ),
+                    ],
                   ),
+                  child: Center(
+                      child: Text("সেইভ করুন",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500))),
                 )
               ],
             ),
