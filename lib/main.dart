@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Timer(
         Duration(seconds: 3),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Second())));
+            context, MaterialPageRoute(builder: (context) => SecondX())));
   }
 
   @override
