@@ -563,14 +563,14 @@ class _RegistrationState extends State<Registration> {
           "description": "demo description",
           "closed": "1",
           "available_for_delivery": "1",
-          "image": ""
+          //"image": ""
         };
-        // final mineData =
-        //     lookupMimeType(_selectedFile!.path, headerBytes: [0xFF, 0xD8])!
-        //         .split("/");
-        // var image = await http.MultipartFile.fromPath(
-        //     "image", _selectedFile!.path,
-        //     contentType: MediaType(mineData[0], mineData[1]));
+        final mineData =
+            lookupMimeType(_selectedFile!.path, headerBytes: [0xFF, 0xD8])!
+                .split("/");
+        var image = await http.MultipartFile.fromPath(
+            "image", _selectedFile!.path,
+            contentType: MediaType(mineData[0], mineData[1]));
         //SharedPreferences pref = await SharedPreferences.getInstance();
         String url = "https://dokanhub.xyz/api/shop-register";
         Map<String, String> headers = <String, String>{
@@ -580,7 +580,7 @@ class _RegistrationState extends State<Registration> {
         var uri = Uri.parse(url);
         var request = http.MultipartRequest('POST', uri)
           ..headers.addAll(headers)
-          // ..files.add(image)
+          ..files.add(image)
           ..fields.addAll(requestBody);
 
         var res = await request.send();
