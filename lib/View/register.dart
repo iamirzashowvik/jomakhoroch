@@ -172,3 +172,217 @@ import 'package:jomakhoroch/View/pin_submit.dart';
 //     );
 //   }
 // }
+
+class Registration extends StatefulWidget {
+  @override
+  _RegistrationState createState() => _RegistrationState();
+}
+
+class _RegistrationState extends State<Registration> {
+  var textEditingControllerDokanName = new TextEditingController();
+  var textEditingControllerApnarNam = new TextEditingController();
+  var textEditingControllerPhone = new TextEditingController();
+  var textEditingControllerPin = new TextEditingController();
+  var textEditingControllerPinNirchit = new TextEditingController();
+  var textEditingControllerDokanCobi = new TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(25, 10, 25, 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 25.0,
+              ),
+              Center(
+                child: Container(
+                  child: Text(
+                    "রেজিষ্ট্রেশন করুন",
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'আপনার দোকানের নাম',
+                  labelStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                  hintText: "দোকানের নাম",
+                  hintStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+                controller: textEditingControllerDokanName,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'আপনার নাম',
+                  labelStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                  hintText: "আপনার নাম",
+                  hintStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+                controller: textEditingControllerApnarNam,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'আপনার মোবাইল নাম্বার',
+                  labelStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                  hintText: "+88 ",
+                  hintStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+                controller: textEditingControllerPhone,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'পাঁচ সংখ্যার পিন নাম্বার দিন',
+                  labelStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                  hintText: "XXXXX",
+                  hintStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+                controller: textEditingControllerPin,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "পিন নাম্বার নির্শ্চিত করুন",
+                  labelStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                  hintText: "",
+                  hintStyle: TextStyle(
+                    color: Colors.black, // <-- Change this
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+                controller: textEditingControllerPinNirchit,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text(
+                    "দোকানের ছবি বা লগো",
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+              Center(
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  margin: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(3.0),
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.black)),
+                  //child: Text('My Awesome Border'),
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Center(
+                child: Container(
+                  width: 200,
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    color: Colors.purple[300],
+                    borderRadius:
+                        BorderRadius.circular(10), //border corner radius
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.2), //color of shadow
+                        spreadRadius: 5, //spread radius
+                        blurRadius: 7, // blur radius
+                        offset: Offset(0, 2), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                      child: Text("সেইভ করুন",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500))),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
