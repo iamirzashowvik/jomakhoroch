@@ -283,6 +283,7 @@ class _RegistrationState extends State<Registration> {
                 height: 20.0,
               ),
               TextFormField(
+                maxLength: 5,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'পাঁচ সংখ্যার পিন নাম্বার দিন',
@@ -306,6 +307,7 @@ class _RegistrationState extends State<Registration> {
                 height: 20.0,
               ),
               TextFormField(
+                maxLength: 5,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "পিন নাম্বার নির্শ্চিত করুন",
