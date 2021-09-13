@@ -200,22 +200,22 @@ class _RegistrationState extends State<Registration> {
     XFile? image = await picker.pickImage(source: source);
     //getImage(source: source);
     if (image != null) {
-      File? cropped = await ImageCropper.cropImage(
-          sourcePath: image.path,
-          aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
-          compressQuality: 100,
-          maxWidth: 700,
-          maxHeight: 700,
-          compressFormat: ImageCompressFormat.jpg,
-          androidUiSettings: AndroidUiSettings(
-            toolbarColor: Colors.deepOrange,
-            toolbarTitle: "Crop Your Image",
-            statusBarColor: Colors.deepOrange.shade900,
-            backgroundColor: Colors.white,
-          ));
+      // File? cropped = await ImageCropper.cropImage(
+      //     sourcePath: image.path,
+      //     aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
+      //     compressQuality: 100,
+      //     maxWidth: 700,
+      //     maxHeight: 700,
+      //     compressFormat: ImageCompressFormat.jpg,
+      //     androidUiSettings: AndroidUiSettings(
+      //       toolbarColor: Colors.deepOrange,
+      //       toolbarTitle: "Crop Your Image",
+      //       statusBarColor: Colors.deepOrange.shade900,
+      //       backgroundColor: Colors.white,
+      //     ));
 
       this.setState(() {
-        _selectedFile = cropped!;
+        _selectedFile = image.path as File;
         _inProcess = false;
       });
     } else {
