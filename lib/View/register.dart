@@ -236,8 +236,8 @@ class _RegistrationState extends State<Registration> {
     if (_selectedFile != null) {
       return Image.file(
         File(_selectedFile!.path),
-        width: 250,
-        height: 250,
+        width: 150,
+        height: 150,
         fit: BoxFit.cover,
       );
     } else {
