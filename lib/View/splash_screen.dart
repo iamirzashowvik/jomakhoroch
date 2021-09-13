@@ -32,7 +32,7 @@ class _SpalshScreenState extends State<SpalshScreen> {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: Image.asset('images/mainlogo.png'),
+          child: Image.asset('images/d.png'),
         ),
       ),
     );
