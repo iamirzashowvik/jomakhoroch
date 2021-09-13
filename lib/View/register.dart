@@ -277,9 +277,10 @@ class _RegistrationState extends State<Registration> {
                   height: 20.0,
                 ),
                 TextFormField(
+                  maxLength: 11,
                   validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'আপনার মোবাইল নাম্বার দিন';
+                    if (value!.length != 11) {
+                      return '১১ ডিজিটের মোবাইল নাম্বার দিন';
                     }
 
                     return null;
@@ -293,7 +294,7 @@ class _RegistrationState extends State<Registration> {
                       fontWeight: FontWeight.w500,
                       fontStyle: FontStyle.normal,
                     ),
-                    hintText: "+88 ",
+                    hintText: "01234567890",
                     hintStyle: TextStyle(
                       color: Colors.black, // <-- Change this
                       fontSize: 14,
@@ -437,8 +438,12 @@ class _RegistrationState extends State<Registration> {
   }
 
   registrationX() {
-    try {} catch (e) {
-      print(e);
+    if (textEditingControllerPin.text == textEditingControllerPinNirchit.text) {
+      try {} catch (e) {
+        print(e);
+      }
+    } else {
+      Get.snackbar('ভিন্ন পিন!', 'পিন নম্বর একই হতে হবে');
     }
   }
 }
