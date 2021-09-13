@@ -190,7 +190,7 @@ class _RegistrationState extends State<Registration> {
   var textEditingControllerPin = new TextEditingController();
   var textEditingControllerPinNirchit = new TextEditingController();
   var textEditingControllerDokanCobi = new TextEditingController();
-  late File _selectedFile;
+  late XFile _selectedFile;
   bool _inProcess = false;
   getImage(ImageSource source) async {
     this.setState(() {
@@ -215,7 +215,7 @@ class _RegistrationState extends State<Registration> {
       //     ));
 
       this.setState(() {
-        _selectedFile = image.path as File;
+        _selectedFile = image;
         _inProcess = false;
       });
     } else {
