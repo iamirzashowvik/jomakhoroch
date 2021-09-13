@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:jomakhoroch/View/login.dart';
 import 'package:jomakhoroch/View/register.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -92,10 +94,9 @@ class _HomePagessState extends State<HomePagess> {
                 ),
                 //color: Colors.cyan[700],
                 child: InkWell(
-                  // onTap: () {
-                  //   Navigator.push(context,
-                  //       MaterialPageRoute(builder: (context) => Cources()));
-                  // },
+                  onTap: () {
+                    Get.to(Login());
+                  },
                   child: Align(
                       alignment: Alignment.center,
                       child: Text(
