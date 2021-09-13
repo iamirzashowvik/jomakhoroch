@@ -538,7 +538,9 @@ class _RegistrationState extends State<Registration> {
   }
 
   registrationX() {
-    if (textEditingControllerPin.text == textEditingControllerPinNirchit.text) {
+    if (1 == 1
+        // textEditingControllerPin.text == textEditingControllerPinNirchit.text
+        ) {
       try {} catch (e) {
         print(e);
       }
