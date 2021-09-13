@@ -231,6 +231,10 @@ class _RegistrationState extends State<Registration> {
   }
 
   Widget getImageWidget() {
+    return Text('f');
+  }
+
+  gg() {
     if (_selectedFile != null) {
       return Image.file(
         File(_selectedFile.path),
