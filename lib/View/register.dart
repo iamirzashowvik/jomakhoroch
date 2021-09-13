@@ -196,8 +196,8 @@ class _RegistrationState extends State<Registration> {
     this.setState(() {
       _inProcess = true;
     });
-    final picker = ImagePicker();
-    XFile? image = await picker.pickImage(source: source);
+    final ImagePicker _picker = ImagePicker();
+    XFile? image = await _picker.pickImage(source: source);
     //getImage(source: source);
     if (image != null) {
       // File? cropped = await ImageCropper.cropImage(
@@ -228,12 +228,14 @@ class _RegistrationState extends State<Registration> {
   Widget getImageWidget() {
     // ignore: unnecessary_null_comparison
     // if (_selectedFile != null) {
-    //   return Image.file(
+    //   return Image.
+    //   file(
     //     _selectedFile,
     //     width: 250,
     //     height: 250,
     //     fit: BoxFit.cover,
-    //   );
+    //   )
+    //   ;
     // } else {
     return Image.asset(
       "images/d.png",
