@@ -236,8 +236,8 @@ class _RegistrationState extends State<Registration> {
     // } else {
     return Image.asset(
       "images/d.png",
-      width: 250,
-      height: 250,
+      width: 150,
+      height: 150,
       fit: BoxFit.cover,
     );
     // }
