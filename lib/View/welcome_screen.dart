@@ -124,7 +124,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: Center(
                   child: GestureDetector(
                     onTap: () {
-                      //  Get.to(Register());
+                      Get.to(Registration());
                     },
                     child: Text(
                       'ফ্রিতে রেজিস্ট্রেশন করুন',
