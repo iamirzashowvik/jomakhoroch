@@ -44,8 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   child: Text(
                     "আপনার ব্যবসার স্মার্ট সমাধান।",
                     style: TextStyle(color: Colors.black, fontSize: 20.0),
-                  )
-              ),
+                  )),
               SizedBox(
                 height: 20.0,
               ),
@@ -125,7 +124,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: Center(
                   child: GestureDetector(
                     onTap: () {
-                      Get.to(Register());
+                      //  Get.to(Register());
                     },
                     child: Text(
                       'ফ্রিতে রেজিস্ট্রেশন করুন',
