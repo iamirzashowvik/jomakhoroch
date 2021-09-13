@@ -253,290 +253,293 @@ class _RegistrationState extends State<Registration> {
 //https://camo.githubusercontent.com/1ac901163b1b3843204a77f5ab49f839fc97b56d59036e0582e3e492f174dfcb/68747470733a2f2f677076632e6172747572696f2e6465762f546168616e696d61
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(25, 10, 25, 10),
-          child: Form(
-            key: regForm,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 25.0,
-                ),
-                Center(
-                  child: Container(
-                    child: Text(
-                      "রেজিষ্ট্রেশন করুন",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700),
-                    ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(25, 10, 25, 10),
+            child: Form(
+              key: regForm,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 25.0,
                   ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'আপনার দোকানের নাম দিন';
-                    }
-
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'আপনার দোকানের নাম',
-                    labelStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                    hintText: "দোকানের নাম",
-                    hintStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                  ),
-                  controller: textEditingControllerDokanName,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'আপনার নাম দিন';
-                    }
-
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'আপনার নাম',
-                    labelStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                    hintText: "আপনার নাম",
-                    hintStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                  ),
-                  controller: textEditingControllerApnarNam,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                TextFormField(
-                  maxLength: 11,
-                  validator: (value) {
-                    if (value!.length != 11) {
-                      return '১১ ডিজিটের মোবাইল নাম্বার দিন';
-                    }
-
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'আপনার মোবাইল নাম্বার',
-                    labelStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                    hintText: "01234567890",
-                    hintStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                  ),
-                  controller: textEditingControllerPhone,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'পাঁচ সংখ্যার পিন নাম্বার দিন';
-                    }
-
-                    return null;
-                  },
-                  maxLength: 5,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'পাঁচ সংখ্যার পিন নাম্বার দিন',
-                    labelStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                    hintText: "XXXXX",
-                    hintStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                  ),
-                  controller: textEditingControllerPin,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'পিন নাম্বার নির্শ্চিত করুন';
-                    }
-
-                    return null;
-                  },
-                  maxLength: 5,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "পিন নাম্বার নির্শ্চিত করুন",
-                    labelStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                    hintText: "",
-                    hintStyle: TextStyle(
-                      color: Colors.black, // <-- Change this
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.normal,
-                    ),
-                  ),
-                  controller: textEditingControllerPinNirchit,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(
-                      "দোকানের ছবি বা লগো",
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
-                // Center(
-                //   child: Container(
-                //     height: 50,
-                //     width: 50,
-                //     margin: const EdgeInsets.all(15.0),
-                //     padding: const EdgeInsets.all(3.0),
-                //     decoration:
-                //         BoxDecoration(border: Border.all(color: Colors.black)),
-                //     child: Text('My Awesome Border'),
-                //   ),
-                // ),
-                Stack(
-                  children: <Widget>[
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        getImageWidget(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            MaterialButton(
-                                color: Colors.green,
-                                child: Text(
-                                  "Camera",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                onPressed: () {
-                                  getImage(ImageSource.camera);
-                                }),
-                            MaterialButton(
-                                color: Colors.deepOrange,
-                                child: Text(
-                                  "Gallery",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                onPressed: () {
-                                  getImage(ImageSource.gallery);
-                                })
-                          ],
-                        )
-                      ],
-                    ),
-                    (_inProcess)
-                        ? Container(
-                            color: Colors.white,
-                            height: MediaQuery.of(context).size.height * 0.95,
-                            child: Center(
-                              child: CircularProgressIndicator(),
-                            ),
-                          )
-                        : Center()
-                  ],
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Center(
-                  child: GestureDetector(
-                    onTap: () {
-                      // registrationX();
-                      // if (regForm.currentState!.validate()) {
-                      //   registrationX();
-                      // } else {}
-                      registrationX();
-                    },
+                  Center(
                     child: Container(
-                      width: 200,
-                      height: 50.0,
-                      decoration: BoxDecoration(
-                        color: Colors.purple[300],
-                        borderRadius:
-                            BorderRadius.circular(10), //border corner radius
-                        boxShadow: [
-                          BoxShadow(
-                            color:
-                                Colors.grey.withOpacity(0.2), //color of shadow
-                            spreadRadius: 5, //spread radius
-                            blurRadius: 7, // blur radius
-                            offset: Offset(0, 2), // changes position of shadow
-                          ),
+                      child: Text(
+                        "রেজিষ্ট্রেশন করুন",
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  TextFormField(
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'আপনার দোকানের নাম দিন';
+                      }
+
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'আপনার দোকানের নাম',
+                      labelStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                      hintText: "দোকানের নাম",
+                      hintStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                    controller: textEditingControllerDokanName,
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  TextFormField(
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'আপনার নাম দিন';
+                      }
+
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'আপনার নাম',
+                      labelStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                      hintText: "আপনার নাম",
+                      hintStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                    controller: textEditingControllerApnarNam,
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  TextFormField(
+                    maxLength: 11,
+                    validator: (value) {
+                      if (value!.length != 11) {
+                        return '১১ ডিজিটের মোবাইল নাম্বার দিন';
+                      }
+
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'আপনার মোবাইল নাম্বার',
+                      labelStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                      hintText: "01234567890",
+                      hintStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                    controller: textEditingControllerPhone,
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  TextFormField(
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'পাঁচ সংখ্যার পিন নাম্বার দিন';
+                      }
+
+                      return null;
+                    },
+                    maxLength: 5,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'পাঁচ সংখ্যার পিন নাম্বার দিন',
+                      labelStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                      hintText: "XXXXX",
+                      hintStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                    controller: textEditingControllerPin,
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  TextFormField(
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'পিন নাম্বার নির্শ্চিত করুন';
+                      }
+
+                      return null;
+                    },
+                    maxLength: 5,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: "পিন নাম্বার নির্শ্চিত করুন",
+                      labelStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                      hintText: "",
+                      hintStyle: TextStyle(
+                        color: Colors.black, // <-- Change this
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                    controller: textEditingControllerPinNirchit,
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Text(
+                        "দোকানের ছবি বা লগো",
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                  // Center(
+                  //   child: Container(
+                  //     height: 50,
+                  //     width: 50,
+                  //     margin: const EdgeInsets.all(15.0),
+                  //     padding: const EdgeInsets.all(3.0),
+                  //     decoration:
+                  //         BoxDecoration(border: Border.all(color: Colors.black)),
+                  //     child: Text('My Awesome Border'),
+                  //   ),
+                  // ),
+                  Stack(
+                    children: <Widget>[
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          getImageWidget(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              MaterialButton(
+                                  color: Colors.green,
+                                  child: Text(
+                                    "Camera",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () {
+                                    getImage(ImageSource.camera);
+                                  }),
+                              MaterialButton(
+                                  color: Colors.deepOrange,
+                                  child: Text(
+                                    "Gallery",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () {
+                                    getImage(ImageSource.gallery);
+                                  })
+                            ],
+                          )
                         ],
                       ),
-                      child: Center(
-                          child: Text("সেইভ করুন",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500))),
-                    ),
+                      (_inProcess)
+                          ? Container(
+                              color: Colors.white,
+                              height: MediaQuery.of(context).size.height * 0.95,
+                              child: Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                            )
+                          : Center()
+                    ],
                   ),
-                )
-              ],
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Center(
+                    child: GestureDetector(
+                      onTap: () {
+                        // registrationX();
+                        // if (regForm.currentState!.validate()) {
+                        //   registrationX();
+                        // } else {}
+                        registrationX();
+                      },
+                      child: Container(
+                        width: 200,
+                        height: 50.0,
+                        decoration: BoxDecoration(
+                          color: Colors.purple[300],
+                          borderRadius:
+                              BorderRadius.circular(10), //border corner radius
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey
+                                  .withOpacity(0.2), //color of shadow
+                              spreadRadius: 5, //spread radius
+                              blurRadius: 7, // blur radius
+                              offset:
+                                  Offset(0, 2), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                            child: Text("সেইভ করুন",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500))),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
