@@ -562,7 +562,7 @@ class _RegistrationState extends State<Registration> {
           "longitude": "35.346",
           "description": "demo description",
           "closed": "1",
-          "available_for_delivery": "1",
+          "available_for_delivery": "1"
           //"image": ""
         };
         final mineData =
