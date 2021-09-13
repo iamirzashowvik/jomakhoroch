@@ -190,7 +190,9 @@ class _RegistrationState extends State<Registration> {
   var textEditingControllerPin = new TextEditingController();
   var textEditingControllerPinNirchit = new TextEditingController();
   var textEditingControllerDokanCobi = new TextEditingController();
-  late XFile _selectedFile;
+
+// ignore: avoid_init_to_null
+  late XFile? _selectedFile = null;
   bool _inProcess = false;
   @override
   void initState() {
@@ -233,7 +235,7 @@ class _RegistrationState extends State<Registration> {
   Widget getImageWidget() {
     if (_selectedFile != null) {
       return Image.file(
-        File(_selectedFile.path),
+        File(_selectedFile!.path),
         width: 250,
         height: 250,
         fit: BoxFit.cover,
@@ -563,10 +565,10 @@ class _RegistrationState extends State<Registration> {
           "available_for_delivery": "1",
         };
         final mineData =
-            lookupMimeType(_selectedFile.path, headerBytes: [0xFF, 0xD8])!
+            lookupMimeType(_selectedFile!.path, headerBytes: [0xFF, 0xD8])!
                 .split("/");
         var image = await http.MultipartFile.fromPath(
-            "image", _selectedFile.path,
+            "image", _selectedFile!.path,
             contentType: MediaType(mineData[0], mineData[1]));
         //SharedPreferences pref = await SharedPreferences.getInstance();
         String url = "https://dokanhub.xyz/api/shop-register";
