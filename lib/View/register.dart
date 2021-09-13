@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,6 +8,9 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:jomakhoroch/View/login.dart';
 import 'package:jomakhoroch/View/pin_submit.dart';
+import 'package:http/http.dart' as http;
+import 'package:http_parser/http_parser.dart';
+import 'package:mime/mime.dart';
 
 // class Register extends StatefulWidget {
 //   const Register({Key? key}) : super(key: key);
@@ -537,11 +541,62 @@ class _RegistrationState extends State<Registration> {
     );
   }
 
-  registrationX() {
+  registrationX() async {
     if (1 == 1
         // textEditingControllerPin.text == textEditingControllerPinNirchit.text
         ) {
-      try {} catch (e) {
+      try {
+        Map<String, String> body = {
+          "email": "showvikmirza@gmail.com",
+          "password": "12345678",
+          "confirmed": "12345678",
+          "delivery_fee": "50",
+          "delivery_range": "20",
+          "phone": "01710427095",
+          "mobile": "01644819157",
+          "address": "demo Address",
+          "latitude": "3543",
+          "longitude": "35346",
+          "description": "demo description",
+          "closed": "1",
+          "available_for_delivery": "1",
+        };
+        final mineData =
+            lookupMimeType(_selectedFile.path, headerBytes: [0xFF, 0xD8])!
+                .split("/");
+        var image = await http.MultipartFile.fromPath(
+            "image", _selectedFile.path,
+            contentType: MediaType(mineData[0], mineData[1]));
+        //SharedPreferences pref = await SharedPreferences.getInstance();
+        String url = "https://dokanhub.xyz/api/shop-register";
+        Map<String, String> headers = <String, String>{
+          'Content-Type': 'application/json'
+        };
+        Map<String, String> requestBody = body;
+        var uri = Uri.parse(url);
+        var request = http.MultipartRequest('POST', uri)
+          ..headers.addAll(headers)
+          ..files.add(image)
+          ..fields.addAll(requestBody);
+
+        var res = await request.send();
+        http.Response response = await http.Response.fromStream(res);
+        var data = json.decode(response.body);
+        print(data);
+        // if (response.statusCode == 200) {
+        //   Navigator.push(
+        //     context,
+        //     MaterialPageRoute(
+        //         builder: (context) => Animal_list(
+        //               token: widget.token,
+        //             )),
+        //   );
+        // } else {
+        //   setState(() {
+        //     i = 0;
+        //   });
+        // }
+      } catch (e) {
         print(e);
       }
     } else {
