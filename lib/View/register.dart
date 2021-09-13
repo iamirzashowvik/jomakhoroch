@@ -361,7 +361,12 @@ class _RegistrationState extends State<Registration> {
                 ),
                 Center(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      // registrationX();
+                      if (regForm.currentState!.validate()) {
+                        registrationX();
+                      } else {}
+                    },
                     child: Container(
                       width: 200,
                       height: 50.0,
@@ -395,4 +400,6 @@ class _RegistrationState extends State<Registration> {
       ),
     );
   }
+
+  registrationX() {}
 }
