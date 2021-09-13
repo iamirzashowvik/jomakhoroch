@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jomakhoroch/View/home_page.dart';
-import 'package:jomakhoroch/View/welcome_screen.dart';
+import 'package:jomakhoroch/View/secondpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SpalshScreen extends StatefulWidget {
@@ -22,7 +22,7 @@ class _SpalshScreenState extends State<SpalshScreen> {
       if (prefs.containsKey('Phone')) {
         Get.off(HomePage());
       } else {
-        Get.off(WelcomeScreen());
+        Get.off(SecondX());
       }
     });
   }
