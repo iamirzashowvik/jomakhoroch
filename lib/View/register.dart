@@ -192,6 +192,11 @@ class _RegistrationState extends State<Registration> {
   var textEditingControllerDokanCobi = new TextEditingController();
   late XFile _selectedFile;
   bool _inProcess = false;
+  @override
+  void initState() {
+    super.initState();
+  }
+
   getImage(ImageSource source) async {
     this.setState(() {
       _inProcess = true;
@@ -226,7 +231,6 @@ class _RegistrationState extends State<Registration> {
   }
 
   Widget getImageWidget() {
-    // ignore: unnecessary_null_comparison
     if (_selectedFile != null) {
       return Image.file(
         File(_selectedFile.path),
