@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:jomakhoroch/View/login.dart';
 import 'package:jomakhoroch/View/pin_submit.dart';
 
@@ -186,6 +190,57 @@ class _RegistrationState extends State<Registration> {
   var textEditingControllerPin = new TextEditingController();
   var textEditingControllerPinNirchit = new TextEditingController();
   var textEditingControllerDokanCobi = new TextEditingController();
+  late File _selectedFile;
+  bool _inProcess = false;
+  getImage(ImageSource source) async {
+    this.setState(() {
+      _inProcess = true;
+    });
+    final picker = ImagePicker();
+    PickedFile? image = await picker.getImage(source: source);
+    if (image != null) {
+      File? cropped = await ImageCropper.cropImage(
+          sourcePath: image.path,
+          aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
+          compressQuality: 100,
+          maxWidth: 700,
+          maxHeight: 700,
+          compressFormat: ImageCompressFormat.jpg,
+          androidUiSettings: AndroidUiSettings(
+            toolbarColor: Colors.deepOrange,
+            toolbarTitle: "Crop Your Image",
+            statusBarColor: Colors.deepOrange.shade900,
+            backgroundColor: Colors.white,
+          ));
+
+      this.setState(() {
+        _selectedFile = cropped!;
+        _inProcess = false;
+      });
+    } else {
+      this.setState(() {
+        _inProcess = false;
+      });
+    }
+  }
+
+  Widget getImageWidget() {
+    if (_selectedFile != null) {
+      return Image.file(
+        _selectedFile,
+        width: 250,
+        height: 250,
+        fit: BoxFit.cover,
+      );
+    } else {
+      return Image.asset(
+        "Assets/photo6154508545861724877.jpg",
+        width: 250,
+        height: 250,
+        fit: BoxFit.cover,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -381,16 +436,58 @@ class _RegistrationState extends State<Registration> {
                     ),
                   ),
                 ),
-                Center(
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    margin: const EdgeInsets.all(15.0),
-                    padding: const EdgeInsets.all(3.0),
-                    decoration:
-                        BoxDecoration(border: Border.all(color: Colors.black)),
-                    //child: Text('My Awesome Border'),
-                  ),
+                // Center(
+                //   child: Container(
+                //     height: 50,
+                //     width: 50,
+                //     margin: const EdgeInsets.all(15.0),
+                //     padding: const EdgeInsets.all(3.0),
+                //     decoration:
+                //         BoxDecoration(border: Border.all(color: Colors.black)),
+                //     child: Text('My Awesome Border'),
+                //   ),
+                // ),
+                Stack(
+                  children: <Widget>[
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        getImageWidget(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            MaterialButton(
+                                color: Colors.green,
+                                child: Text(
+                                  "Camera",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                onPressed: () {
+                                  getImage(ImageSource.camera);
+                                }),
+                            MaterialButton(
+                                color: Colors.deepOrange,
+                                child: Text(
+                                  "Gallery",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                onPressed: () {
+                                  getImage(ImageSource.gallery);
+                                })
+                          ],
+                        )
+                      ],
+                    ),
+                    (_inProcess)
+                        ? Container(
+                            color: Colors.white,
+                            height: MediaQuery.of(context).size.height * 0.95,
+                            child: Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                          )
+                        : Center()
+                  ],
                 ),
                 SizedBox(
                   height: 10.0,
