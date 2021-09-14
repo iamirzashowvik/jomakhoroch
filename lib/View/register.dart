@@ -446,59 +446,61 @@ class _RegistrationState extends State<Registration> {
                       ),
                     ),
                   ),
-                  Center(
-                    child: Container(
-                      height: 200,
-                      width: 200,
-                      // margin: const EdgeInsets.all(15.0),
-                      // padding: const EdgeInsets.all(3.0),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black)),
-                      child: Stack(
+                  // Center(
+                  //   child: Container(
+                  //     height: 50,
+                  //     width: 50,
+                  //     margin: const EdgeInsets.all(15.0),
+                  //     padding: const EdgeInsets.all(3.0),
+                  //     decoration:
+                  //         BoxDecoration(border: Border.all(color: Colors.black)),
+                  //     child: Text('My Awesome Border'),
+                  //   ),
+                  // ),
+                  Stack(
+                    children: <Widget>[
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.black)),
+                              child: getImageWidget()),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              getImageWidget(),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: <Widget>[
-                                  MaterialButton(
-                                      color: Colors.green,
-                                      child: Text(
-                                        "Camera",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      onPressed: () {
-                                        getImage(ImageSource.camera);
-                                      }),
-                                  MaterialButton(
-                                      color: Colors.deepOrange,
-                                      child: Text(
-                                        "Gallery",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      onPressed: () {
-                                        getImage(ImageSource.gallery);
-                                      })
-                                ],
-                              )
-                            ],
-                          ),
-                          (_inProcess)
-                              ? Container(
-                                  color: Colors.white,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.95,
-                                  child: Center(
-                                    child: CircularProgressIndicator(),
+                              MaterialButton(
+                                  color: Colors.green,
+                                  child: Text(
+                                    "Camera",
+                                    style: TextStyle(color: Colors.white),
                                   ),
-                                )
-                              : Center()
+                                  onPressed: () {
+                                    getImage(ImageSource.camera);
+                                  }),
+                              MaterialButton(
+                                  color: Colors.deepOrange,
+                                  child: Text(
+                                    "Gallery",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () {
+                                    getImage(ImageSource.gallery);
+                                  })
+                            ],
+                          )
                         ],
                       ),
-                    ),
+                      (_inProcess)
+                          ? Container(
+                              color: Colors.white,
+                              height: MediaQuery.of(context).size.height * 0.95,
+                              child: Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                            )
+                          : Center()
+                    ],
                   ),
                   SizedBox(
                     height: 10.0,
