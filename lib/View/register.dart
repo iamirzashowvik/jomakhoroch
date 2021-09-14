@@ -421,7 +421,7 @@ class _RegistrationState extends State<Registration> {
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
                       ),
-                      hintText: "",
+                      hintText: "পিন নাম্বার নির্শ্চিত করুন",
                       hintStyle: TextStyle(
                         color: Colors.grey, // <-- Change this
                         fontSize: 14,
