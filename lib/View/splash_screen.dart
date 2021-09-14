@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jomakhoroch/Lenden_Report/dashboard.dart';
-import 'package:jomakhoroch/View/home_page.dart';
-import 'package:jomakhoroch/View/secondpage.dart';
+import 'package:jomakhoroch/View/dashBoardx.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SpalshScreen extends StatefulWidget {
