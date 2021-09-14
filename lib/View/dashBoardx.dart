@@ -9,38 +9,32 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
             backgroundColor: Colors.pink[50],
-
             body: SingleChildScrollView(
               child: Padding(
                 //padding: const EdgeInsets.all(5.0),
                 padding: const EdgeInsets.all(0.0),
                 child: Column(children: [
-
-
                   ///////////////////
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.red[400],
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(0),
-                            topRight: Radius.circular(0),
-                            bottomRight: Radius.circular(30.0),
-                            bottomLeft: Radius.circular(30.0),
-
-                        ), //border corner radius
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(0),
+                        topRight: Radius.circular(0),
+                        bottomRight: Radius.circular(30.0),
+                        bottomLeft: Radius.circular(30.0),
+                      ), //border corner radius
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.2), //color of shadow
                           spreadRadius: 5, //spread radius
                           blurRadius: 7, // blur radius
-                          offset: Offset(
-                              0, 2), // changes position of shadow
+                          offset: Offset(0, 2), // changes position of shadow
                         ),
                       ],
                     ),
@@ -52,8 +46,6 @@ class _DashBoardState extends State<DashBoard> {
                       fit: BoxFit.scaleDown,
                       alignment: Alignment.bottomCenter,
                       child: Container(
-
-
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -61,12 +53,23 @@ class _DashBoardState extends State<DashBoard> {
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
                                 children: [
-                                  Text("আজকের বিক্রি",style: TextStyle(fontSize: 18,color: Colors.black,fontWeight: FontWeight.w600),),
-                                  Text("১০,৫০০ টাকা",style: TextStyle(fontSize: 18,color: Colors.blueAccent,fontWeight: FontWeight.w600),),
+                                  Text(
+                                    "আজকের বিক্রি",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    "১০,৫০০ টাকা",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.blueAccent,
+                                        fontWeight: FontWeight.w600),
+                                  ),
                                 ],
                               ),
                             ),
-
                             const VerticalDivider(
                               color: Colors.grey,
                               thickness: 1,
@@ -74,35 +77,44 @@ class _DashBoardState extends State<DashBoard> {
                               endIndent: 0,
                               width: 20,
                             ),
-
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
                                 children: [
-                                  Text("অনলাইন বিক্রি",style: TextStyle(fontSize: 18,color: Colors.black,fontWeight: FontWeight.w600),),
-                                  Text("৫০০ টাকা",style: TextStyle(fontSize: 18,color: Colors.blueAccent,fontWeight: FontWeight.w600),),
+                                  Text(
+                                    "অনলাইন বিক্রি",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    "৫০০ টাকা",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.blueAccent,
+                                        fontWeight: FontWeight.w600),
+                                  ),
                                 ],
                               ),
                             ),
-
-
-
                           ],
                         ),
 
                         decoration: BoxDecoration(
                           color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(15.0),
-                                topRight: Radius.circular(15.0)), //border corner radius
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(15.0),
+                              topRight:
+                                  Radius.circular(15.0)), //border corner radius
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey
                                   .withOpacity(0.2), //color of shadow
                               spreadRadius: 5, //spread radius
                               blurRadius: 7, // blur radius
-                              offset: Offset(
-                                  0, 2), // changes position of shadow
+                              offset:
+                                  Offset(0, 2), // changes position of shadow
                             ),
                           ],
                         ),
@@ -114,9 +126,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                   ),
 
-
                   Container(
-
                     child: Column(
                       children: [
                         Divider(
@@ -125,16 +135,25 @@ class _DashBoardState extends State<DashBoard> {
                           indent: 10,
                           endIndent: 20,
                         ),
-
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text("বিক্রি ইতিহাস",style: TextStyle(fontSize: 12,color: Colors.grey,fontWeight: FontWeight.w200),),
-                            Text(" অনলাইন ইতিহাস",style: TextStyle(fontSize: 12,color: Colors.grey,fontWeight: FontWeight.w200),),
-
+                            Text(
+                              "বিক্রি ইতিহাস",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w200),
+                            ),
+                            Text(
+                              " অনলাইন ইতিহাস",
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w200),
+                            ),
                           ],
                         )
-
                       ],
                     ),
 
@@ -142,15 +161,14 @@ class _DashBoardState extends State<DashBoard> {
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(15.0),
-                          bottomRight: Radius.circular(15.0)), //border corner radius
+                          bottomRight:
+                              Radius.circular(15.0)), //border corner radius
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey
-                              .withOpacity(0.2), //color of shadow
+                          color: Colors.grey.withOpacity(0.2), //color of shadow
                           spreadRadius: 5, //spread radius
                           blurRadius: 7, // blur radius
-                          offset: Offset(
-                              0, 2), // changes position of shadow
+                          offset: Offset(0, 2), // changes position of shadow
                         ),
                       ],
                     ),
@@ -160,9 +178,6 @@ class _DashBoardState extends State<DashBoard> {
                     height: 30,
                   ),
                   ///////////////////
-
-
-
 
                   Container(
                     //width: 335,
@@ -211,12 +226,12 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 90,
                                           width: 60,
                                           child:
-                                          Image.asset("assets/kroy.png")),
+                                              Image.asset("images/kroy.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.fromLTRB(8, 4, 8, 8),
+                                        const EdgeInsets.fromLTRB(8, 4, 8, 8),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -241,7 +256,6 @@ class _DashBoardState extends State<DashBoard> {
                               borderRadius: BorderRadius.circular(
                                   15), //border corner radius
                               boxShadow: [
-
                                 BoxShadow(
                                   color: Colors.grey
                                       .withOpacity(0.2), //color of shadow
@@ -250,7 +264,6 @@ class _DashBoardState extends State<DashBoard> {
                                   offset: Offset(
                                       0, 2), // changes position of shadow
                                 ),
-
                               ],
                             ),
                             child: InkWell(
@@ -268,16 +281,16 @@ class _DashBoardState extends State<DashBoard> {
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Container(
-                                        // height: 90,
+                                          // height: 90,
                                           height: 90,
                                           width: 60,
                                           child:
-                                          Image.asset("assets/store.png")),
+                                              Image.asset("assets/store.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.fromLTRB(8, 4, 8, 8),
+                                        const EdgeInsets.fromLTRB(8, 4, 8, 8),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -330,17 +343,17 @@ class _DashBoardState extends State<DashBoard> {
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Container(
-                                        // height: 90,
-                                        // width: 60,
+                                          // height: 90,
+                                          // width: 60,
                                           height: 90,
                                           width: 60,
-                                          child: Image.asset(
-                                              "assets/report.png")),
+                                          child:
+                                              Image.asset("assets/report.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.fromLTRB(4, 5, 8, 5),
+                                        const EdgeInsets.fromLTRB(4, 5, 8, 5),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -394,13 +407,13 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 90,
                                           //width: 60,
                                           width: 50,
-                                          child:
-                                          Image.asset("assets/prolist.png")),
+                                          child: Image.asset(
+                                              "assets/prolist.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.fromLTRB(8, 3.5, 8, 8),
+                                        const EdgeInsets.fromLTRB(8, 3.5, 8, 8),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -424,13 +437,11 @@ class _DashBoardState extends State<DashBoard> {
                     height: 0,
                   ),
 
-
-
                   Container(
                     child: GridView.count(
                       shrinkWrap: true,
                       primary: false,
-                      padding: const EdgeInsets.fromLTRB(20,5,20,5),
+                      padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       crossAxisCount: 3,
@@ -443,7 +454,6 @@ class _DashBoardState extends State<DashBoard> {
                               borderRadius: BorderRadius.circular(
                                   10), //border corner radius
                               boxShadow: [
-
                                 BoxShadow(
                                   color: Colors.grey
                                       .withOpacity(0.2), //color of shadow
@@ -471,12 +481,12 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 50,
                                           width: 35,
                                           child:
-                                          Image.asset("assets/hisab.png")),
+                                              Image.asset("assets/hisab.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.fromLTRB(3, 4, 3, 0),
+                                        const EdgeInsets.fromLTRB(3, 4, 3, 0),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -527,13 +537,12 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 50,
                                           //width: 35,
                                           width: 35,
-                                          child:
-                                          Image.asset("assets/p.png")),
+                                          child: Image.asset("assets/p.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.fromLTRB(3, 4, 3, 0),
+                                        const EdgeInsets.fromLTRB(3, 4, 3, 0),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -583,14 +592,14 @@ class _DashBoardState extends State<DashBoard> {
                                           //height: 50,
                                           height: 40,
                                           width: 35,
-                                          child:
-                                          Image.asset("assets/payment.png")),
+                                          child: Image.asset(
+                                              "assets/payment.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    //const EdgeInsets.fromLTRB(3, 4, 3, 0),
-                                    const EdgeInsets.fromLTRB(3, 4, 0, 0),
+                                        //const EdgeInsets.fromLTRB(3, 4, 3, 0),
+                                        const EdgeInsets.fromLTRB(3, 4, 0, 0),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -611,14 +620,11 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                   ),
 
-
-
-
                   Container(
                     child: GridView.count(
                       shrinkWrap: true,
                       primary: false,
-                      padding: const EdgeInsets.fromLTRB(20,5,20,0),
+                      padding: const EdgeInsets.fromLTRB(20, 5, 20, 0),
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       crossAxisCount: 3,
@@ -631,7 +637,6 @@ class _DashBoardState extends State<DashBoard> {
                               borderRadius: BorderRadius.circular(
                                   10), //border corner radius
                               boxShadow: [
-
                                 BoxShadow(
                                   color: Colors.grey
                                       .withOpacity(0.2), //color of shadow
@@ -658,13 +663,12 @@ class _DashBoardState extends State<DashBoard> {
                                       child: Container(
                                           height: 50,
                                           width: 35,
-                                          child:
-                                          Image.asset("assets/cal.png")),
+                                          child: Image.asset("assets/cal.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.fromLTRB(3, 4, 3, 0),
+                                        const EdgeInsets.fromLTRB(3, 4, 3, 0),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -713,13 +717,13 @@ class _DashBoardState extends State<DashBoard> {
                                       child: Container(
                                           height: 50,
                                           width: 35,
-                                          child:
-                                          Image.asset("assets/contact.png")),
+                                          child: Image.asset(
+                                              "assets/contact.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.fromLTRB(3, 4, 3, 0),
+                                        const EdgeInsets.fromLTRB(3, 4, 3, 0),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -770,13 +774,13 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 40,
                                           width: 35,
                                           child:
-                                          Image.asset("assets/promo.png")),
+                                              Image.asset("assets/promo.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    //const EdgeInsets.fromLTRB(3, 4, 3, 0),
-                                    const EdgeInsets.fromLTRB(3, 2, 0, 0),
+                                        //const EdgeInsets.fromLTRB(3, 4, 3, 0),
+                                        const EdgeInsets.fromLTRB(3, 2, 0, 0),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -797,20 +801,16 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                   ),
 
-
-
                   SizedBox(
                     height: 20,
                   ),
-
 
                   Align(
                       alignment: Alignment.center,
                       child: SizedBox(
                         width: 300,
                         height: 130,
-                        child:
-                        Carousel(
+                        child: Carousel(
                             images: [
                               AssetImage('assets/c1.png'),
                               //AssetImage('images/f3.jpg'),
@@ -825,22 +825,16 @@ class _DashBoardState extends State<DashBoard> {
                             borderRadius: false,
                             moveIndicatorFromBottom: 180.0,
                             overlayShadow: false,
-                            autoplayDuration: const Duration(seconds: 4)
-                        ),
-                      )
-                  ),
+                            autoplayDuration: const Duration(seconds: 4)),
+                      )),
 
                   SizedBox(
                     height: 0,
                   ),
 
-
-
                   SizedBox(
                     height: 15,
                   ),
-
-
 
                   Container(
                     //width: 320,
@@ -890,13 +884,13 @@ class _DashBoardState extends State<DashBoard> {
                                       child: Container(
                                           height: 90,
                                           width: 60,
-                                          child:
-                                          Image.asset("assets/motamot.png")),
+                                          child: Image.asset(
+                                              "assets/motamot.png")),
                                     ),
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.fromLTRB(8, 0, 8, 8),
+                                        const EdgeInsets.fromLTRB(8, 0, 8, 8),
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: Text(
@@ -948,7 +942,7 @@ class _DashBoardState extends State<DashBoard> {
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Container(
-                                        // height: 90,
+                                          // height: 90,
                                           height: 70,
                                           width: 60,
                                           child: CircleAvatar(
@@ -960,8 +954,9 @@ class _DashBoardState extends State<DashBoard> {
                                     alignment: Alignment.center,
                                     child: Padding(
                                       padding:
-                                      //const EdgeInsets.fromLTRB(8, 0, 8, 8),
-                                      const EdgeInsets.fromLTRB(12, 3.5, 8, 8),
+                                          //const EdgeInsets.fromLTRB(8, 0, 8, 8),
+                                          const EdgeInsets.fromLTRB(
+                                              12, 3.5, 8, 8),
                                       child: Text(
                                         "কীভাবে ব্যাবহার করবেন?",
                                         style: TextStyle(
