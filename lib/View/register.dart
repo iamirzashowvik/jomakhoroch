@@ -265,7 +265,7 @@ class _RegistrationState extends State<Registration> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 25.0,
+                    height: 20.0,
                   ),
                   Center(
                     child: Container(
@@ -300,7 +300,7 @@ class _RegistrationState extends State<Registration> {
                       ),
                       hintText: "দোকানের নাম",
                       hintStyle: TextStyle(
-                        color: Colors.black, // <-- Change this
+                        color: Colors.grey, // <-- Change this
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
