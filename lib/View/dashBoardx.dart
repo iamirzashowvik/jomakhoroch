@@ -348,7 +348,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 90,
                                           width: 60,
                                           child:
-                                              Image.asset("assets/report.png")),
+                                              Image.asset("images/report.png")),
                                     ),
                                   ),
                                   Padding(
