@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jomakhoroch/Lenden_Report/dashboard.dart';
 import 'package:jomakhoroch/View/home_page.dart';
 import 'package:jomakhoroch/View/secondpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,7 +21,7 @@ class _SpalshScreenState extends State<SpalshScreen> {
     Timer(Duration(seconds: 1), () async {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       if (prefs.containsKey('Phone')) {
-        Get.off(HomePage());
+        Get.off(DashBoard());
       } else {
         Get.off(SecondX());
       }
