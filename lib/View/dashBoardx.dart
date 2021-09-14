@@ -947,7 +947,7 @@ class _DashBoardState extends State<DashBoard> {
                                           width: 60,
                                           child: CircleAvatar(
                                               child: Image.asset(
-                                                  "assets/kivabe.png"))),
+                                                  "images/kivabe.png"))),
                                     ),
                                   ),
                                   Align(
