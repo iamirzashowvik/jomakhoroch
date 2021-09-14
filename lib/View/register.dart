@@ -330,7 +330,7 @@ class _RegistrationState extends State<Registration> {
                       ),
                       hintText: "আপনার নাম",
                       hintStyle: TextStyle(
-                        color: Colors.black, // <-- Change this
+                        color: Colors.grey, // <-- Change this
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
@@ -361,7 +361,7 @@ class _RegistrationState extends State<Registration> {
                       ),
                       hintText: "01234567890",
                       hintStyle: TextStyle(
-                        color: Colors.black, // <-- Change this
+                        color: Colors.grey, // <-- Change this
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
@@ -392,7 +392,7 @@ class _RegistrationState extends State<Registration> {
                       ),
                       hintText: "XXXXX",
                       hintStyle: TextStyle(
-                        color: Colors.black, // <-- Change this
+                        color: Colors.grey, // <-- Change this
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
@@ -423,7 +423,7 @@ class _RegistrationState extends State<Registration> {
                       ),
                       hintText: "",
                       hintStyle: TextStyle(
-                        color: Colors.black, // <-- Change this
+                        color: Colors.grey, // <-- Change this
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
