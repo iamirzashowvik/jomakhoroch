@@ -774,7 +774,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 40,
                                           width: 35,
                                           child:
-                                              Image.asset("assets/promo.png")),
+                                              Image.asset("images/promo.png")),
                                     ),
                                   ),
                                   Padding(
@@ -812,7 +812,7 @@ class _DashBoardState extends State<DashBoard> {
                         height: 130,
                         child: Carousel(
                             images: [
-                              AssetImage('assets/c1.png'),
+                              AssetImage('images/c1.png'),
                               //AssetImage('images/f3.jpg'),
                               //AssetImage('images/f1.jpg'),
                             ],
