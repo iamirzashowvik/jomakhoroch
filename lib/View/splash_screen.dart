@@ -23,7 +23,8 @@ class _SpalshScreenState extends State<SpalshScreen> {
       if (prefs.containsKey('Phone')) {
         Get.off(DashBoard());
       } else {
-        Get.off(SecondX());
+        Get.off(DashBoard());
+        //    Get.off(SecondX());
       }
     });
   }
