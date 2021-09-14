@@ -448,8 +448,8 @@ class _RegistrationState extends State<Registration> {
                   ),
                   Center(
                     child: Container(
-                      height: 50,
-                      width: 50,
+                      height: 150,
+                      width: 150,
                       margin: const EdgeInsets.all(15.0),
                       padding: const EdgeInsets.all(3.0),
                       decoration: BoxDecoration(
