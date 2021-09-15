@@ -226,7 +226,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 90,
                                           width: 60,
                                           child:
-                                              Image.asset("assets/kroy.png")),
+                                              Image.asset("images/kroy.png")),
                                     ),
                                   ),
                                   Padding(
@@ -285,7 +285,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 90,
                                           width: 60,
                                           child:
-                                              Image.asset("assets/store.png")),
+                                              Image.asset("images/store.png")),
                                     ),
                                   ),
                                   Padding(
@@ -348,7 +348,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 90,
                                           width: 60,
                                           child:
-                                              Image.asset("assets/report.png")),
+                                              Image.asset("images/report.png")),
                                     ),
                                   ),
                                   Padding(
@@ -408,7 +408,7 @@ class _DashBoardState extends State<DashBoard> {
                                           //width: 60,
                                           width: 50,
                                           child: Image.asset(
-                                              "assets/prolist.png")),
+                                              "images/prolist.png")),
                                     ),
                                   ),
                                   Padding(
@@ -481,7 +481,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 50,
                                           width: 35,
                                           child:
-                                              Image.asset("assets/hisab.png")),
+                                              Image.asset("images/hisab.png")),
                                     ),
                                   ),
                                   Padding(
@@ -537,7 +537,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 50,
                                           //width: 35,
                                           width: 35,
-                                          child: Image.asset("assets/p.png")),
+                                          child: Image.asset("images/p.png")),
                                     ),
                                   ),
                                   Padding(
@@ -593,7 +593,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 40,
                                           width: 35,
                                           child: Image.asset(
-                                              "assets/payment.png")),
+                                              "images/payment.png")),
                                     ),
                                   ),
                                   Padding(
@@ -663,7 +663,7 @@ class _DashBoardState extends State<DashBoard> {
                                       child: Container(
                                           height: 50,
                                           width: 35,
-                                          child: Image.asset("assets/cal.png")),
+                                          child: Image.asset("images/cal.png")),
                                     ),
                                   ),
                                   Padding(
@@ -718,7 +718,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 50,
                                           width: 35,
                                           child: Image.asset(
-                                              "assets/contact.png")),
+                                              "images/contact.png")),
                                     ),
                                   ),
                                   Padding(
@@ -774,7 +774,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 40,
                                           width: 35,
                                           child:
-                                              Image.asset("assets/promo.png")),
+                                              Image.asset("images/promo.png")),
                                     ),
                                   ),
                                   Padding(
@@ -812,7 +812,7 @@ class _DashBoardState extends State<DashBoard> {
                         height: 130,
                         child: Carousel(
                             images: [
-                              AssetImage('assets/c1.png'),
+                              AssetImage('images/c1.png'),
                               //AssetImage('images/f3.jpg'),
                               //AssetImage('images/f1.jpg'),
                             ],
@@ -885,7 +885,7 @@ class _DashBoardState extends State<DashBoard> {
                                           height: 90,
                                           width: 60,
                                           child: Image.asset(
-                                              "assets/motamot.png")),
+                                              "images/motamot.png")),
                                     ),
                                   ),
                                   Padding(
@@ -947,7 +947,7 @@ class _DashBoardState extends State<DashBoard> {
                                           width: 60,
                                           child: CircleAvatar(
                                               child: Image.asset(
-                                                  "assets/kivabe.png"))),
+                                                  "images/kivabe.png"))),
                                     ),
                                   ),
                                   Align(
